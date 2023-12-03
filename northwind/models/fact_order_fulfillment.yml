@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: fact_order_fulfillment
+    description: Order level fact table. Transaction one row per order does not include product but can track order fulfillment
+    columns:
+      - name: OrderId
+        description: Degenerate dimension for of the order.
+        tests:
+            - unique
+            - not_null
+      - name: customerkey
+        description: Dimension key for dim_customer
+      - name: employeekey
+        description: Dimension key for dim_employee
+      - name: orderdatekey
+        description: role play Order Date Dimension key for dim_date
+      - name: requireddatekey
+        description: role play Required Date Dimension key for dim_date
+      - name: shippeddatekey
+        description: role play Shipped Date  Dimension key for dim_date
+      - name: quantity
+        description: additive fact for total quantity of product sold on order
+      - name: totalorderamount
+        description: additive fact for total amount of product on order quantity * product price - discount
+      - name: daysfromordertoshipped
+        description: the number of days elapsed from order to shipped
+      - name: daysfromordertorequired
+        description: the number of days before the order is required 
+      - name: shippedtorequireddelta
+        description: the difference between  shipped and required. positive means shipment was late.
+      - name: shippedontime
+        description: yes or no was the shipment on time
