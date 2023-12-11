@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: fact_order_fulfillment
+    description: Order level fact table. Transaction one row per order does not include product but can track order fulfillment
+    columns:
+      - name: Order_Id
+        description: Degenerate dimension for of the order.
+        tests:
+            - unique
+            - not_null
+      - name: customer_key
+        description: Dimension key for dim_customer
+      - name: order_date_key
+        description: role play Order Date Dimension key for dim_date
+      - name: shipped_date_key
+        description: role play Shipped Date  Dimension key for dim_date
+      - name: products_on_order
+        description: additive fact for total unique products sold on order
+      - name: quantity
+        description: additive fact for total quantity of product sold on order
+      - name: order_to_shipped_days
+        description: the number of days elapsed from order to shipped
+      - name: shipped_via
+        description: shipper details for the order

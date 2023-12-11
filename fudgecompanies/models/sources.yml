@@ -27,7 +27,8 @@ sources:
         columns:
           - name: order_id
             tests:
-              - unique        
+              - unique   
+              
       - name: fm_products
         columns:
           - name: product_id
