@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: dim_title_genres
+    description: maping of titles to genres. one row for title presenting one genre
+    

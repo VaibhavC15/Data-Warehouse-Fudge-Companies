@@ -72,7 +72,7 @@ sources:
               - unique
       - name: ff_account_titles
         columns:
-          - name: account_title_id
+          - name: at_id
             tests:
               - unique        
       - name: ff_genre_lookup

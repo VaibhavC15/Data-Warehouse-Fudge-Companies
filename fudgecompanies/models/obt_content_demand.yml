@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: obt_content_demand
+    description: The content demand fact table combined with all of its outrigger dimensions into one bit table. periodic snapshot fact table with regular updates to aggregate values for titles.

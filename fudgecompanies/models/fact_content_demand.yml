@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: fact_content_demand
+    description: title level fact table. periodic snapshot of titles by views and rating
+    columns:
+      - name: title_id
+        description: Degenerate dimension for of the titles.
+        tests:
+            - unique
+            - not_null
+      - name: avg_rating
+        description: average rating for the tile
+      - name: total_ratings
+        description: total number of customers who gave ratings
+      - name: total_views
+        description: total number if people who viewed the title
+      
